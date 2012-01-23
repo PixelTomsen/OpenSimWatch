@@ -11,9 +11,9 @@ current methods:
 - Test using http-check, if this fails, the process terminates
 
 Note:
-- In regions with lots of prims and scripts the interval is not set too low, because it takes in this case, to the region
+- In regions with lots of prims and scripts http the interval is not set too low, because it takes some time until the region
   is online!
-  
+ 
   
 ***************************************************************************************************************************** 
 German:
@@ -25,5 +25,5 @@ derzeitige methoden :
 - test mittels http-check, wenn dieser fehlschlägt, wird der prozess beendet
 
 Hinweis:
-- bei regionen mit vielen prims und scripts den intervall nicht zu niedrig setzen, denn es dauert eine in diesem fall, bis die region
+- bei regionen mit vielen prims und scripts das http-intervall nicht zu niedrig setzen, denn es dauert einige zeit, bis die region
  online ist!
