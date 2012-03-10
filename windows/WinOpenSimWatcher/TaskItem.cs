@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -66,6 +66,8 @@ namespace OpenSimWatcher
         private TaskProcessState m_taskProcessState = TaskProcessState.Stop;
 
         private int m_threadWait = 5; // 5 seconds delay for first start
+
+        private IActionHTTPCheckMethode m_httpCheckAction;
         private int m_httpWait = 120;// 2 minutes intitial wait
         private int m_httpFail = 3; 
 
@@ -93,21 +95,24 @@ namespace OpenSimWatcher
             m_taskState = TaskState.Invalidate;
             ApplicationBase.Instance.EventHandler.TriggerOnTaskStop(this, "File not found");
 
-            m_log.FatalFormat(":[TASK] '{0}':Application not found - '{1}'",
-                m_taskParameter.Description,
-                m_taskParameter.StartupParameter.FullPath);
+            m_log.FatalFormat(":[{0}] Application not found - '{1}'", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
 
             return false;
         }
 
         internal void Worker()
         {
-            m_log.InfoFormat(":[TASK] Running Task-Thread: '{0}' - {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
+            m_log.DebugFormat(":[{0}] Task running for {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
             m_taskState = TaskState.Run;
             ApplicationBase.Instance.EventHandler.TriggerOnTaskStart(this, "Start");
 
             m_httpWait = m_taskParameter.CheckURIInterval;
             m_httpFail = m_taskParameter.CheckURICount;
+            if (m_taskParameter.CheckURI)
+            {
+                m_httpCheckAction = new ActionOpenSimHttpCheck();
+                m_httpCheckAction.Parameter = m_taskParameter.HttpConfig;
+            }
 
             while (m_taskState == TaskState.Run)
             {
@@ -123,13 +128,14 @@ namespace OpenSimWatcher
                     {
                         m_httpWait--;
                         if (m_httpWait <= 0)
-                            if (!HttpCheck())
+                            if (!m_httpCheckAction.Execute())
                             {
+                                m_httpFail--;
                                 m_httpWait = m_taskParameter.CheckURIInterval;
-                                m_log.WarnFormat(":[TASK] {0} missing http-response.", this.m_taskParameter.Description);
+                                m_log.WarnFormat(":[{0}] http response are missed", m_taskParameter.Description);
                                 if (m_httpFail <= 0)
                                 {
-                                    m_log.WarnFormat(":[TASK] {0} no http-response, process kill!", this.m_taskParameter.Description);
+                                    m_log.WarnFormat(":[{0}] http response are missed ({1} count(s), killing process!", m_taskParameter.Description, m_taskParameter.CheckURICount);
                                     StopProcess();
                                 }
                             }
@@ -163,7 +169,7 @@ namespace OpenSimWatcher
                 m_taskProcessState = TaskProcessState.Run;
                 m_taskState = TaskState.Run;
                 ApplicationBase.Instance.EventHandler.TriggerOnTaskProcessStart(this, "Task Process started");
-                m_log.InfoFormat(":[Task Process] Start Task '{0}' - {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
+                m_log.InfoFormat(":[{0}] (re)starting {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
                 return;
             }
             m_taskProcessState = TaskProcessState.Stop;
@@ -180,7 +186,7 @@ namespace OpenSimWatcher
             m_process.Exited += new EventHandler(OnProcessExited);
             m_taskProcessState = TaskProcessState.Run;
             ApplicationBase.Instance.EventHandler.TriggerOnTaskProcessStart(this, "Task Process is running");
-            m_log.InfoFormat(":[Task Process] '{0}' - {1} :: found runnig instance", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
+            m_log.InfoFormat(":[{0}] found running instance for {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
             return true;
         }
 
@@ -225,7 +231,7 @@ namespace OpenSimWatcher
 
         void OnProcessExited(object sender, EventArgs e)
         {
-            m_log.WarnFormat(":[Task Process] Exited:'{0}' - {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
+            m_log.WarnFormat(":[{0}] Process exited: {1}", m_taskParameter.Description, m_taskParameter.StartupParameter.FullPath);
             m_process.Exited -= OnProcessExited;
             m_process.Dispose();
             m_threadWait = m_taskParameter.CheckInterval;
@@ -233,44 +239,6 @@ namespace OpenSimWatcher
             m_httpFail = m_taskParameter.CheckURICount;
             m_taskProcessState = TaskProcessState.Exit;
             ApplicationBase.Instance.EventHandler.TriggerOnTaskProcessStop(this, "Task Process exited");
-        }
-
-        private bool HttpCheck()
-        {
-            HttpWebRequest request;
-            HttpWebResponse response;
-            string result = "";
-                  
-            try
-            {
-                request = (HttpWebRequest)WebRequest.Create(m_taskParameter.URI);
-            }
-            catch (Exception e)
-            {
-                m_log.ErrorFormat("[HTTPCHECK] Url:{0};Count:{1}; Message:{2}", m_taskParameter.URI, m_httpFail, e.Message);
-                m_httpFail--;
-                return false;
-            }
-
-            try
-            {
-                response = (HttpWebResponse)request.GetResponse();
-                Stream responseStream = response.GetResponseStream();
-                StreamReader streamReader = new StreamReader(responseStream);
-                result = streamReader.ReadToEnd();
-                streamReader.Close();
-                responseStream.Close();
-                m_log.DebugFormat("[HTTPCHECK] {0} - Result: {1}", m_taskParameter.URI, result);
-                if (result == "OK")
-                    return true;
-            }
-            catch (Exception e)
-            {
-                m_log.ErrorFormat("[HTTPCHECK] Url:{0};Count:{1}; Message:{2}", m_taskParameter.URI, m_httpFail, e.Message);
-                m_httpFail--;
-                return false;
-            }
-            return false;
         }
 
     }

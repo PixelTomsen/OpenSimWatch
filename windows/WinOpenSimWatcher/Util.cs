@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -127,7 +127,7 @@ namespace OpenSimWatcher
 
         public static void ExceptionFile(string message)
         {
-            System.IO.StreamWriter io = new System.IO.StreamWriter(HomeFolder + "Exception.log", true);
+            System.IO.StreamWriter io = new System.IO.StreamWriter(String.Format("{0}OpenSimWatcher_Exception.log", HomeFolder), true);
             io.WriteLine(String.Format("{0} - Exception : {1}", UnixToDate(CurrentUnix), message));
             io.Flush();
             io.Close();
@@ -154,8 +154,9 @@ namespace OpenSimWatcher
                 }
                 catch(Win32Exception e)
                 {
-                  // here some access-denied exceptions System-Processes
-                  //ExceptionFile(e.ErrorCode.ToString() + ":" + e.Message);  
+                  // here some access-denied exceptions for parsed System-Processes
+                  // we hide this
+                  // ExceptionFile(e.ErrorCode.ToString() + ":" + e.Message);  
                 }
             }
             return null;

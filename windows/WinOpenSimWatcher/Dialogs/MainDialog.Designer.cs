@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -100,138 +100,87 @@ namespace OpenSimWatcher
             // 
             // statusBar
             // 
-            this.statusBar.AccessibleDescription = null;
-            this.statusBar.AccessibleName = null;
-            resources.ApplyResources(this.statusBar, "statusBar");
             this.statusBar.BackColor = System.Drawing.Color.Silver;
-            this.statusBar.BackgroundImage = null;
-            this.statusBar.Font = null;
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusClock});
+            resources.ApplyResources(this.statusBar, "statusBar");
             this.statusBar.Name = "statusBar";
             // 
             // statusClock
             // 
-            this.statusClock.AccessibleDescription = null;
-            this.statusClock.AccessibleName = null;
-            resources.ApplyResources(this.statusClock, "statusClock");
-            this.statusClock.BackgroundImage = null;
             this.statusClock.Name = "statusClock";
+            resources.ApplyResources(this.statusClock, "statusClock");
             // 
             // statusStrip1
             // 
-            this.statusStrip1.AccessibleDescription = null;
-            this.statusStrip1.AccessibleName = null;
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.Color.Linen;
-            this.statusStrip1.BackgroundImage = null;
-            this.statusStrip1.Font = null;
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // menuMain
             // 
-            this.menuMain.AccessibleDescription = null;
-            this.menuMain.AccessibleName = null;
-            resources.ApplyResources(this.menuMain, "menuMain");
-            this.menuMain.BackgroundImage = null;
-            this.menuMain.Font = null;
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem1,
             this.menuAbout});
+            resources.ApplyResources(this.menuMain, "menuMain");
             this.menuMain.Name = "menuMain";
             // 
             // editToolStripMenuItem1
             // 
-            this.editToolStripMenuItem1.AccessibleDescription = null;
-            this.editToolStripMenuItem1.AccessibleName = null;
-            resources.ApplyResources(this.editToolStripMenuItem1, "editToolStripMenuItem1");
-            this.editToolStripMenuItem1.BackgroundImage = null;
             this.editToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addTaskToolStripMenuItem,
             this.toolStripMenuItem2,
             this.exitMenu});
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.editToolStripMenuItem1, "editToolStripMenuItem1");
             // 
             // addTaskToolStripMenuItem
             // 
-            this.addTaskToolStripMenuItem.AccessibleDescription = null;
-            this.addTaskToolStripMenuItem.AccessibleName = null;
-            resources.ApplyResources(this.addTaskToolStripMenuItem, "addTaskToolStripMenuItem");
-            this.addTaskToolStripMenuItem.BackgroundImage = null;
             this.addTaskToolStripMenuItem.Image = global::OpenSimWatcher.Properties.Resources.IconNew;
             this.addTaskToolStripMenuItem.Name = "addTaskToolStripMenuItem";
-            this.addTaskToolStripMenuItem.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.addTaskToolStripMenuItem, "addTaskToolStripMenuItem");
             this.addTaskToolStripMenuItem.Click += new System.EventHandler(this.caddTask_Click);
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.AccessibleDescription = null;
-            this.toolStripMenuItem2.AccessibleName = null;
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // exitMenu
             // 
-            this.exitMenu.AccessibleDescription = null;
-            this.exitMenu.AccessibleName = null;
             resources.ApplyResources(this.exitMenu, "exitMenu");
-            this.exitMenu.BackgroundImage = null;
             this.exitMenu.Name = "exitMenu";
-            this.exitMenu.ShortcutKeyDisplayString = null;
             this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
             // 
             // menuAbout
             // 
-            this.menuAbout.AccessibleDescription = null;
-            this.menuAbout.AccessibleName = null;
-            resources.ApplyResources(this.menuAbout, "menuAbout");
-            this.menuAbout.BackgroundImage = null;
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.menuAbout, "menuAbout");
             this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.AccessibleDescription = null;
-            this.editToolStripMenuItem.AccessibleName = null;
-            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
-            this.editToolStripMenuItem.BackgroundImage = null;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             // 
             // addNewTaskToolStripMenuItem
             // 
-            this.addNewTaskToolStripMenuItem.AccessibleDescription = null;
-            this.addNewTaskToolStripMenuItem.AccessibleName = null;
-            resources.ApplyResources(this.addNewTaskToolStripMenuItem, "addNewTaskToolStripMenuItem");
-            this.addNewTaskToolStripMenuItem.BackgroundImage = null;
             this.addNewTaskToolStripMenuItem.Name = "addNewTaskToolStripMenuItem";
-            this.addNewTaskToolStripMenuItem.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.addNewTaskToolStripMenuItem, "addNewTaskToolStripMenuItem");
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.AccessibleDescription = null;
-            this.toolStripMenuItem1.AccessibleName = null;
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // closeToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.AccessibleDescription = null;
-            this.closeToolStripMenuItem.AccessibleName = null;
-            resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
-            this.closeToolStripMenuItem.BackgroundImage = null;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
             // 
             // listView
             // 
-            this.listView.AccessibleDescription = null;
-            this.listView.AccessibleName = null;
             this.listView.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            resources.ApplyResources(this.listView, "listView");
-            this.listView.BackgroundImage = null;
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnNr,
             this.columnDesc,
@@ -240,7 +189,7 @@ namespace OpenSimWatcher
             this.columnRestart,
             this.columnCount});
             this.listView.ContextMenuStrip = this.listViewMenu;
-            this.listView.Font = null;
+            resources.ApplyResources(this.listView, "listView");
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -278,11 +227,6 @@ namespace OpenSimWatcher
             // 
             // listViewMenu
             // 
-            this.listViewMenu.AccessibleDescription = null;
-            this.listViewMenu.AccessibleName = null;
-            resources.ApplyResources(this.listViewMenu, "listViewMenu");
-            this.listViewMenu.BackgroundImage = null;
-            this.listViewMenu.Font = null;
             this.listViewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caddTask,
             this.ceditTask,
@@ -291,82 +235,57 @@ namespace OpenSimWatcher
             this.cStartStopTask,
             this.cStartStopProcess});
             this.listViewMenu.Name = "listViewMenu";
+            resources.ApplyResources(this.listViewMenu, "listViewMenu");
             // 
             // caddTask
             // 
-            this.caddTask.AccessibleDescription = null;
-            this.caddTask.AccessibleName = null;
-            resources.ApplyResources(this.caddTask, "caddTask");
-            this.caddTask.BackgroundImage = null;
             this.caddTask.Image = global::OpenSimWatcher.Properties.Resources.IconNew;
             this.caddTask.Name = "caddTask";
-            this.caddTask.ShortcutKeyDisplayString = null;
+            resources.ApplyResources(this.caddTask, "caddTask");
             this.caddTask.Click += new System.EventHandler(this.caddTask_Click);
             // 
             // ceditTask
             // 
-            this.ceditTask.AccessibleDescription = null;
-            this.ceditTask.AccessibleName = null;
             resources.ApplyResources(this.ceditTask, "ceditTask");
-            this.ceditTask.BackgroundImage = null;
             this.ceditTask.Image = global::OpenSimWatcher.Properties.Resources.IconEdit;
             this.ceditTask.Name = "ceditTask";
-            this.ceditTask.ShortcutKeyDisplayString = null;
             this.ceditTask.Click += new System.EventHandler(this.ceditTask_Click);
             // 
             // cdeleteTask
             // 
-            this.cdeleteTask.AccessibleDescription = null;
-            this.cdeleteTask.AccessibleName = null;
             resources.ApplyResources(this.cdeleteTask, "cdeleteTask");
-            this.cdeleteTask.BackgroundImage = null;
             this.cdeleteTask.Image = global::OpenSimWatcher.Properties.Resources.IconDelete;
             this.cdeleteTask.Name = "cdeleteTask";
-            this.cdeleteTask.ShortcutKeyDisplayString = null;
             this.cdeleteTask.Click += new System.EventHandler(this.cdeleteTask_Click);
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.AccessibleDescription = null;
-            this.toolStripMenuItem3.AccessibleName = null;
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
             // cStartStopTask
             // 
-            this.cStartStopTask.AccessibleDescription = null;
-            this.cStartStopTask.AccessibleName = null;
             resources.ApplyResources(this.cStartStopTask, "cStartStopTask");
-            this.cStartStopTask.BackgroundImage = null;
             this.cStartStopTask.Name = "cStartStopTask";
-            this.cStartStopTask.ShortcutKeyDisplayString = null;
             // 
             // cStartStopProcess
             // 
-            this.cStartStopProcess.AccessibleDescription = null;
-            this.cStartStopProcess.AccessibleName = null;
             resources.ApplyResources(this.cStartStopProcess, "cStartStopProcess");
-            this.cStartStopProcess.BackgroundImage = null;
             this.cStartStopProcess.Name = "cStartStopProcess";
-            this.cStartStopProcess.ShortcutKeyDisplayString = null;
             // 
             // MainDialog
             // 
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = null;
             this.Controls.Add(this.listView);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.menuMain);
-            this.Font = null;
             this.Icon = global::OpenSimWatcher.Properties.Resources.TrayIcon;
             this.MainMenuStrip = this.menuMain;
             this.MaximizeBox = false;
             this.Name = "MainDialog";
             this.VisibleChanged += new System.EventHandler(this.MainDialog_VisibleChanged);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainDialog_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainDialog_FormClosing);
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
             this.menuMain.ResumeLayout(false);

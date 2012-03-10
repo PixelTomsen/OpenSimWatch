@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationBase.cs" />
+    <Compile Include="ApplicationRuntime.cs" />
     <Compile Include="BaseHandler.cs" />
     <Compile Include="ApplicationBaseSettings.cs" />
     <Compile Include="ApplicationBaseUI.cs" />
@@ -92,7 +93,9 @@
     <Compile Include="Dialogs\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Types.cs" />
+    <Compile Include="TaskActionMethode\ITaskActionMethode.cs" />
+    <Compile Include="TaskActionMethode\ActionOpenSimHttpCheck.cs" />
+    <Compile Include="TaskActionMethode\TaskActionMethodes.cs" />
     <Compile Include="Dialogs\MainDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +109,11 @@
       <DependentUpon>TaskEditDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="TaskItem.cs" />
+    <Compile Include="Types\Constants.cs" />
+    <Compile Include="Types\HttpParameter.cs" />
+    <Compile Include="Types\StartupInfo.cs" />
+    <Compile Include="Types\TaskAktion.cs" />
+    <Compile Include="Types\TaskParameter.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Program.cs">
     </Compile>

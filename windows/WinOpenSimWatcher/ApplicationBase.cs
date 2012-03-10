@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -118,7 +118,7 @@ namespace OpenSimWatcher
         }
 
 
-        private void StopTaskWorker()
+        public void StopTaskWorker()
         {
             foreach (TaskItem t in TaskList)
             {

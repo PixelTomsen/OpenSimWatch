@@ -27,26 +27,33 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public class StartupInfo
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
+        private string m_startupPath = String.Empty;
+        private string m_appName = String.Empty;
+        private string m_args = String.Empty;
+
+        public string StartupPath
+        {
+            get { return m_startupPath; }
+            set { m_startupPath = value; }
         }
+
+        public string AppName
+        {
+            get { return m_appName; }
+            set { m_appName = value; }
+        }
+
+        public string Args
+        {
+            get { return m_args; }
+            set { m_args = value; }
+        }
+
+        public string FullPath { get { return StartupPath + AppName; } }
     }
 }

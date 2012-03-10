@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -63,8 +63,8 @@ namespace OpenSimWatcher
             this.textApp.Text = Parameter.StartupParameter.AppName;
             this.textFolder.Text = Parameter.StartupParameter.StartupPath;
             this.textParameter.Text = Parameter.StartupParameter.Args;
-            this.textUrl.Text = Parameter.Host;
-            this.textPort.Value = Convert.ToDecimal(Parameter.Port);
+            this.textUrl.Text = Parameter.HttpConfig.Host;
+            this.textPort.Value = Convert.ToDecimal(Parameter.HttpConfig.Port);
             this.checkHTTP.Checked = Parameter.CheckURI;
             this.httpInterval.Value = Convert.ToDecimal(Parameter.CheckURIInterval);
             this.killCounter.Value = Convert.ToDecimal(Parameter.CheckURICount);
@@ -97,8 +97,8 @@ namespace OpenSimWatcher
             Parameter.StartupParameter.AppName = this.textApp.Text;
             Parameter.StartupParameter.StartupPath = this.textFolder.Text;
             Parameter.StartupParameter.Args = this.textParameter.Text;
-            Parameter.Host = this.textUrl.Text;
-            Parameter.Port = Convert.ToInt32(this.textPort.Value);
+            Parameter.HttpConfig.Host = this.textUrl.Text;
+            Parameter.HttpConfig.Port = Convert.ToInt32(this.textPort.Value);
             Parameter.CheckURI = this.checkHTTP.Checked;
             Parameter.CheckURIInterval = Convert.ToInt32(this.httpInterval.Value);
             Parameter.CheckURICount = Convert.ToInt32(this.killCounter.Value);

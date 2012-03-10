@@ -125,7 +125,7 @@
     <value>Speichern</value>
   </data>
   <data name="btnOK.ToolTip" xml:space="preserve">
-    <value>Einstellungen Sichern</value>
+    <value />
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 219</value>
@@ -137,7 +137,10 @@
     <value>Abbrechen</value>
   </data>
   <data name="btnCancel.ToolTip" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value />
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textName.ToolTip" xml:space="preserve">
     <value>Bezeichnung für den Task</value>
@@ -148,11 +151,11 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Task Anwendung:</value>
   </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="textApp.ToolTip" xml:space="preserve">
     <value>Ausführbarer Anwendungsname</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Anwendung</value>
   </data>
   <data name="killCounter.Location" type="System.Drawing.Point, System.Drawing">
     <value>218, 181</value>
@@ -175,6 +178,9 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Adresse:</value>
   </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="httpInterval.ToolTip" xml:space="preserve">
     <value>Interval  z.B. : Value 60 = 1 Minute ,  Value 3600 = 1 hour</value>
   </data>
@@ -183,6 +189,12 @@
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Neustart nach (Sec):</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textUrl.ToolTip" xml:space="preserve">
     <value>ServerIP (z.B. 127.0.0.1); URL Check is http://ServerIP:Port/simstatus/ with needed Result 'OK'</value>
@@ -199,6 +211,12 @@
   <data name="checkEnabled.Text" xml:space="preserve">
     <value>Aktiv</value>
   </data>
+  <data name="checkEnabled.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="textParameter.ToolTip" xml:space="preserve">
     <value>Kommando-Zeilen Parameter</value>
   </data>
@@ -207,6 +225,9 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Verzeichnis:</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textFolder.ToolTip" xml:space="preserve">
     <value>Verzeichnis der Anwendung</value>
@@ -217,6 +238,12 @@
   <data name="btnSelectFile.Text" xml:space="preserve">
     <value>Auswählen</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Anwendung</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 245</value>
   </data>
@@ -226,5 +253,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Task Bearbeiten</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -64,7 +64,7 @@ namespace OpenSimWatcher
             // 
             this.notifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSetup, this.menuSeperator, this.menuExit});
-            this.notifyMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.notifyMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.notifyMenu.Name = "notifyMenu";
             this.notifyMenu.Size = new System.Drawing.Size(145, 26);
             this.notifyMenu.Text = "OpenSimWatcher";
@@ -122,20 +122,22 @@ namespace OpenSimWatcher
         private void menuSetup_Click(object sender, EventArgs e)
         {
             if (!mainDialog.Visible)
-                mainDialog.ShowDialog();
+            {
+                mainDialog.Show();
+                mainDialog.BringToFront();
+            }
             else
                 mainDialog.BringToFront();
         }
 
+        public void RemoveTray()
+        {
+            notifyIcon.Dispose();
+        }
 
         private void menuExit_Click(object sender, EventArgs e)
         {
-            ApplicationBase.Instance.StopTaskWorker();
-            this.notifyIcon.Dispose();
-            SaveOptions();
-            SaveTaskOptions();
-            m_log.Info("Exit Application");
-            Environment.Exit(0);     
+            ApplicationRuntime.Destroy();
         }
     }
 }

@@ -27,26 +27,34 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
+using System.Linq;
+using System.Text;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public class HttpParameter
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
+        private string m_host = "http://127.0.0.1";
+        public string Host
+        {
+            get { return m_host; }
+            set { m_host = value; }
         }
+
+        private int m_port = 9000;
+        public int Port
+        {
+            get { return m_port; }
+            set { m_port = value; }
+        }
+
+        private string m_partUrl = String.Empty;
+        public string PartURL
+        {
+            get { return m_host; }
+            set { m_host = value; }
+        }
+
+        public string URL { get { return String.Format("{0}:{1}{2}", m_host, m_port, m_partUrl); } }
     }
 }

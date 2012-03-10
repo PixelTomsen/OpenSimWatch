@@ -27,26 +27,20 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public class TaskAction
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
+        public int ID
+        { get; set; }
+
+        private string m_description = "My TaskAction";
+        public string Description
+        {
+            get { return m_description; }
+            set { m_description = value; }
         }
+
     }
 }

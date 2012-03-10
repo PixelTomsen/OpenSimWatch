@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -92,9 +92,13 @@ namespace OpenSimWatcher
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Image = global::OpenSimWatcher.Properties.Resources.IconSave;
+            this.btnOK.AccessibleDescription = null;
+            this.btnOK.AccessibleName = null;
             resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.BackgroundImage = null;
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Font = null;
+            this.btnOK.Image = global::OpenSimWatcher.Properties.Resources.IconSave;
             this.btnOK.Name = "btnOK";
             this.toolTip.SetToolTip(this.btnOK, resources.GetString("btnOK.ToolTip"));
             this.btnOK.UseVisualStyleBackColor = true;
@@ -102,38 +106,54 @@ namespace OpenSimWatcher
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Image = global::OpenSimWatcher.Properties.Resources.IconDelete;
+            this.btnCancel.AccessibleDescription = null;
+            this.btnCancel.AccessibleName = null;
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.BackgroundImage = null;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Font = null;
+            this.btnCancel.Image = global::OpenSimWatcher.Properties.Resources.IconDelete;
             this.btnCancel.Name = "btnCancel";
             this.toolTip.SetToolTip(this.btnCancel, resources.GetString("btnCancel.ToolTip"));
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
+            this.label1.AccessibleDescription = null;
+            this.label1.AccessibleName = null;
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.toolTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // textName
             // 
             this.textName.AcceptsTab = true;
-            this.textName.BackColor = System.Drawing.Color.Cornsilk;
-            this.textName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textName.AccessibleDescription = null;
+            this.textName.AccessibleName = null;
             resources.ApplyResources(this.textName, "textName");
+            this.textName.BackColor = System.Drawing.Color.Cornsilk;
+            this.textName.BackgroundImage = null;
+            this.textName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textName.Name = "textName";
             this.toolTip.SetToolTip(this.textName, resources.GetString("textName.ToolTip"));
             // 
             // label2
             // 
+            this.label2.AccessibleDescription = null;
+            this.label2.AccessibleName = null;
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            this.toolTip.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // textApp
             // 
             this.textApp.AcceptsTab = true;
-            this.textApp.BackColor = System.Drawing.Color.Cornsilk;
-            this.textApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textApp.AccessibleDescription = null;
+            this.textApp.AccessibleName = null;
             resources.ApplyResources(this.textApp, "textApp");
+            this.textApp.BackColor = System.Drawing.Color.Cornsilk;
+            this.textApp.BackgroundImage = null;
+            this.textApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textApp.Name = "textApp";
             this.toolTip.SetToolTip(this.textApp, resources.GetString("textApp.ToolTip"));
             // 
@@ -144,7 +164,11 @@ namespace OpenSimWatcher
             // 
             // groupBox1
             // 
+            this.groupBox1.AccessibleDescription = null;
+            this.groupBox1.AccessibleName = null;
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.Color.LightGray;
+            this.groupBox1.BackgroundImage = null;
             this.groupBox1.Controls.Add(this.killCounter);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -166,16 +190,18 @@ namespace OpenSimWatcher
             this.groupBox1.Controls.Add(this.textApp);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textName);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            this.toolTip.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // killCounter
             // 
+            this.killCounter.AccessibleDescription = null;
+            this.killCounter.AccessibleName = null;
+            resources.ApplyResources(this.killCounter, "killCounter");
             this.killCounter.BackColor = System.Drawing.Color.Cornsilk;
             this.killCounter.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.killCounter, "killCounter");
             this.killCounter.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -196,25 +222,35 @@ namespace OpenSimWatcher
             // 
             // label9
             // 
+            this.label9.AccessibleDescription = null;
+            this.label9.AccessibleName = null;
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            this.toolTip.SetToolTip(this.label9, resources.GetString("label9.ToolTip"));
             // 
             // label8
             // 
+            this.label8.AccessibleDescription = null;
+            this.label8.AccessibleName = null;
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             this.toolTip.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
             // 
             // label7
             // 
+            this.label7.AccessibleDescription = null;
+            this.label7.AccessibleName = null;
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
+            this.toolTip.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
             // 
             // httpInterval
             // 
+            this.httpInterval.AccessibleDescription = null;
+            this.httpInterval.AccessibleName = null;
+            resources.ApplyResources(this.httpInterval, "httpInterval");
             this.httpInterval.BackColor = System.Drawing.Color.Cornsilk;
             this.httpInterval.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.httpInterval, "httpInterval");
             this.httpInterval.Maximum = new decimal(new int[] {
             86400000,
             0,
@@ -235,14 +271,19 @@ namespace OpenSimWatcher
             // 
             // label6
             // 
+            this.label6.AccessibleDescription = null;
+            this.label6.AccessibleName = null;
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
+            this.toolTip.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
             // 
             // taskInterval
             // 
+            this.taskInterval.AccessibleDescription = null;
+            this.taskInterval.AccessibleName = null;
+            resources.ApplyResources(this.taskInterval, "taskInterval");
             this.taskInterval.BackColor = System.Drawing.Color.Cornsilk;
             this.taskInterval.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.taskInterval, "taskInterval");
             this.taskInterval.Maximum = new decimal(new int[] {
             86400000,
             0,
@@ -263,14 +304,19 @@ namespace OpenSimWatcher
             // 
             // label5
             // 
+            this.label5.AccessibleDescription = null;
+            this.label5.AccessibleName = null;
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
+            this.toolTip.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
             // 
             // textPort
             // 
+            this.textPort.AccessibleDescription = null;
+            this.textPort.AccessibleName = null;
+            resources.ApplyResources(this.textPort, "textPort");
             this.textPort.BackColor = System.Drawing.Color.Cornsilk;
             this.textPort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textPort, "textPort");
             this.textPort.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -282,15 +328,21 @@ namespace OpenSimWatcher
             // textUrl
             // 
             this.textUrl.AcceptsTab = true;
-            this.textUrl.BackColor = System.Drawing.Color.Cornsilk;
-            this.textUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUrl.AccessibleDescription = null;
+            this.textUrl.AccessibleName = null;
             resources.ApplyResources(this.textUrl, "textUrl");
+            this.textUrl.BackColor = System.Drawing.Color.Cornsilk;
+            this.textUrl.BackgroundImage = null;
+            this.textUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUrl.Name = "textUrl";
             this.toolTip.SetToolTip(this.textUrl, resources.GetString("textUrl.ToolTip"));
             // 
             // checkHTTP
             // 
+            this.checkHTTP.AccessibleDescription = null;
+            this.checkHTTP.AccessibleName = null;
             resources.ApplyResources(this.checkHTTP, "checkHTTP");
+            this.checkHTTP.BackgroundImage = null;
             this.checkHTTP.Name = "checkHTTP";
             this.toolTip.SetToolTip(this.checkHTTP, resources.GetString("checkHTTP.ToolTip"));
             this.checkHTTP.UseVisualStyleBackColor = true;
@@ -298,43 +350,63 @@ namespace OpenSimWatcher
             // 
             // checkEnabled
             // 
+            this.checkEnabled.AccessibleDescription = null;
+            this.checkEnabled.AccessibleName = null;
             resources.ApplyResources(this.checkEnabled, "checkEnabled");
+            this.checkEnabled.BackgroundImage = null;
+            this.checkEnabled.Font = null;
             this.checkEnabled.Name = "checkEnabled";
+            this.toolTip.SetToolTip(this.checkEnabled, resources.GetString("checkEnabled.ToolTip"));
             this.checkEnabled.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
+            this.label4.AccessibleDescription = null;
+            this.label4.AccessibleName = null;
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
+            this.toolTip.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // textParameter
             // 
             this.textParameter.AcceptsTab = true;
-            this.textParameter.BackColor = System.Drawing.Color.Cornsilk;
-            this.textParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textParameter.AccessibleDescription = null;
+            this.textParameter.AccessibleName = null;
             resources.ApplyResources(this.textParameter, "textParameter");
+            this.textParameter.BackColor = System.Drawing.Color.Cornsilk;
+            this.textParameter.BackgroundImage = null;
+            this.textParameter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textParameter.Name = "textParameter";
             this.toolTip.SetToolTip(this.textParameter, resources.GetString("textParameter.ToolTip"));
             // 
             // label3
             // 
+            this.label3.AccessibleDescription = null;
+            this.label3.AccessibleName = null;
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
+            this.toolTip.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // textFolder
             // 
             this.textFolder.AcceptsTab = true;
-            this.textFolder.BackColor = System.Drawing.Color.Cornsilk;
-            this.textFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textFolder.AccessibleDescription = null;
+            this.textFolder.AccessibleName = null;
             resources.ApplyResources(this.textFolder, "textFolder");
+            this.textFolder.BackColor = System.Drawing.Color.Cornsilk;
+            this.textFolder.BackgroundImage = null;
+            this.textFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textFolder.Name = "textFolder";
             this.textFolder.TabStop = false;
             this.toolTip.SetToolTip(this.textFolder, resources.GetString("textFolder.ToolTip"));
             // 
             // btnSelectFile
             // 
-            this.btnSelectFile.FlatAppearance.BorderSize = 0;
+            this.btnSelectFile.AccessibleDescription = null;
+            this.btnSelectFile.AccessibleName = null;
             resources.ApplyResources(this.btnSelectFile, "btnSelectFile");
+            this.btnSelectFile.BackgroundImage = null;
+            this.btnSelectFile.FlatAppearance.BorderSize = 0;
             this.btnSelectFile.Image = global::OpenSimWatcher.Properties.Resources.IconOpenFile;
             this.btnSelectFile.Name = "btnSelectFile";
             this.toolTip.SetToolTip(this.btnSelectFile, resources.GetString("btnSelectFile.ToolTip"));
@@ -354,18 +426,23 @@ namespace OpenSimWatcher
             // TaskEditDialog
             // 
             this.AcceptButton = this.btnOK;
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.BackgroundImage = null;
             this.CancelButton = this.btnCancel;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.Font = null;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = global::OpenSimWatcher.Properties.Resources.TrayIcon;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TaskEditDialog";
+            this.toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

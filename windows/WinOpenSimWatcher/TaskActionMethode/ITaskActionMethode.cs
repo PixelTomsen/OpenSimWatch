@@ -27,26 +27,33 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
+using System.Text;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public interface ITaskActionMethode
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
-        }
+        string Name { get; }
+
+        string Description { get; }
+
+        int Count { get; }
+
+        bool Execute();
     }
+
+    public interface IActionExecuteMethode : ITaskActionMethode
+    {
+        StartupInfo StartupParameter { get; }
+    }
+
+    public interface IActionHTTPCheckMethode : ITaskActionMethode
+    {
+        HttpParameter Parameter { get; set; }
+
+        string Response { get; }
+    }
+
+
+
 }

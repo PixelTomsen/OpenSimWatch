@@ -1,5 +1,5 @@
 ﻿/* Project-Start 2011-11
- * (c)Pixel Tomsen (Christian Kurzhals) pixel.tomsen[at]gridnet.info
+ * (c)Pixel Tomsen (chk) pixel.tomsen[at]gridnet.info
  * https://github.com/PixelTomsen/OpenSimWatch
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -92,7 +92,7 @@ namespace OpenSimWatcher
         {
             ListViewItem item;
             listView.Items.Clear();
-            foreach (TaskItem t in Program.AppBase.TaskList)
+            foreach (TaskItem t in ApplicationRuntime.AppBase.TaskList)
             {
                 item = this.listView.Items.Add(t.ParameterTask.ID.ToString());
                 item.UseItemStyleForSubItems = false;
@@ -105,7 +105,6 @@ namespace OpenSimWatcher
                 item.SubItems[this.columnProcessStatus.Index].BackColor = SetColor((int)t.GetTaskProcessState);
                 item.SubItems[this.columnTaskStatus.Index].BackColor = SetColor((int)t.GetTaskState);              
             }
-
         }
 
         private void UpdateItem(TaskItem task)
@@ -130,14 +129,9 @@ namespace OpenSimWatcher
 
         private void exitMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
-        private void MainDialog_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-
-   
         private void listView_MouseClick(object sender, MouseEventArgs e)
         {
             ListViewItem select = listView.GetItemAt(e.X, e.Y);
@@ -252,6 +246,12 @@ namespace OpenSimWatcher
         {
             AboutBox dlg = new AboutBox();
             dlg.ShowDialog();
+        }
+
+        private void MainDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
 
      }

@@ -27,26 +27,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
+using System.Linq;
+using System.Text;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public class TaskActionMethodes
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
-        }
+        private List<ITaskActionMethode> m_defaultMethodes = new List<ITaskActionMethode>();
+
     }
 }

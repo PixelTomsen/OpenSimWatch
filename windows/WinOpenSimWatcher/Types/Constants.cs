@@ -27,26 +27,22 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public enum TaskState
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
-            {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
-            }
-        }
-    }
+        Disabled = -2,
+        Invalidate = -1,
+        Stop = 0,
+        Run = 1
+    };
+
+    public enum TaskProcessState
+    {
+        Disabled = -2,
+        Exit = -1,
+        Stop = 0,
+        Run = 1
+    };
 }

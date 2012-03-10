@@ -30,23 +30,64 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using log4net;
+using log4net.Config;
 
 namespace OpenSimWatcher
 {
-    static class Program
+    public class ApplicationRuntime
     {
-        [STAThread]
-        static void Main(string[] args)
-        {           
-            // only one Instance
-            bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "OpenSimWatcher", out createdNew))
+        private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        public static ApplicationBase AppBase = null;
+
+        private static bool m_asService = false;
+
+        public bool IsService{ get { return m_asService;} }
+
+        static public void Create(string[] args)
+        {
+            Util.MoveLog();
+            XmlConfigurator.Configure();
+
+            m_log.InfoFormat("<Application Start: OS Version: {0}, {1} CPU(s), CLR-Version: {2}>", Environment.OSVersion, Environment.ProcessorCount, Environment.Version);
+
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(UnhandledException);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            AppBase = new ApplicationBase();
+            Application.Run();
+        }
+
+        static public void Create(string[] args, bool AsService)
+        {
+            m_asService = AsService;
+            Create(args);
+        }
+
+        static public void Destroy()
+        {
+            ApplicationBase.Instance.StopTaskWorker();
+            ApplicationBase.Instance.RemoveTray();
+            ApplicationBase.Instance.SaveOptions();
+            ApplicationBase.Instance.SaveTaskOptions();
+            m_log.Info("Exit Application");
+            Environment.Exit(0);   
+        }
+
+
+        static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            try
             {
-                if (createdNew)
-                {
-                    ApplicationRuntime.Create(args);
-                }
+                Exception ex = (Exception)e.ExceptionObject;
+                Util.ExceptionFile(String.Format("{0}, Stack:{1}", ex.Message, ex.StackTrace));
+            }
+            finally
+            {
+                Application.Exit();
             }
         }
+
+
     }
 }
